@@ -1,0 +1,18 @@
+{
+  "slug": "agent-budget-scheduler",
+  "label": "final-main-cli",
+  "argv": [
+    "py",
+    "-3.11",
+    "<local-coordination>\\main_final_cli_review_20261008.py",
+    "agent-budget-scheduler"
+  ],
+  "cwd": "<local-portfolio>\\agent-budget-scheduler",
+  "started_at_utc": "2026-10-08T01:47:46.385113+00:00",
+  "duration_seconds": 1.0,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "{\"passed\": true, \"assertions\": [\"basic: actual exit 0\", \"basic: mock execution and no active reservation left\", \"Quickstart literal two successes/four calls/65 known tokens\", \"Submitted token estimates remain separate from observations\", \"basic: decision sequence contiguous\", \"basic/summarize-a: exactly one final terminal decision\", \"basic/summarize-b: exactly one final terminal decision\", \"faults: actual exit 0\", \"faults: mock execution and no active reservation left\", \"Failure fixture preserves three failures, 25 known/50 unresolved/15 overrun\", \"Incomplete cost remains unknown\", \"faults: decision sequence contiguous\", \"faults/adapter-error: exactly one final terminal decision\", \"faults/missing-usage: exactly one final terminal decision\", \"faults/overrun: exactly one final terminal decision\", \"faults/healthy: exactly one final terminal decision\", \"embedded: actual exit 0\", \"Documented embedding returns mock success\", \"All fixture bytes preserved\", \"Standalone local Git repository exists\", \"MIT license contains grant and warranty limitation\", \"CI action references use immutable 40-character commits\", \"CI has read-only checkout, pinned runtime and bounded job\", \"CI includes Windows/Linux without secret/deployment/push steps\", \"CI runs meaningful local unit suite\", \"CI pins match verified Budget research/attribution\", \"CI smoke assertion entry exists\", \"Architecture/contracts/limitations/license attribution/evidence and recorded example docs present\"], \"command_count\": 3, \"reviewed_at_utc\": \"2026-10-08T01:47:47.378041+00:00\", \"limitations\": \"Local Windows mocked execution. Hosted CI/Linux/POSIX/live-model/provider/production/security/performance guarantees unexecuted or outside agreed MVP.\"}\n",
+  "stderr": "",
+  "scope": "independently executed by main; result alone does not imply full acceptance"
+}

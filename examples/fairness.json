@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0",
+  "execution_mode": "offline_mock",
+  "config": {
+    "max_running": 1,
+    "max_running_per_tenant": 1,
+    "max_pending": 32,
+    "aging_interval_ms": 1000
+  },
+  "jobs": [
+    {
+      "job_id": "a1",
+      "tenant": "alpha",
+      "priority": 9,
+      "max_tool_calls": 10,
+      "max_tokens": 100,
+      "operations": [
+        {
+          "tool": "lookup.record",
+          "token_upper_bound": 0,
+          "arguments": {
+            "record": "release-a",
+            "delay_ms": 0,
+            "cleanup_delay_ms": 0
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "a2",
+      "tenant": "alpha",
+      "priority": 9,
+      "max_tool_calls": 10,
+      "max_tokens": 100,
+      "operations": [
+        {
+          "tool": "lookup.record",
+          "token_upper_bound": 0,
+          "arguments": {
+            "record": "release-a",
+            "delay_ms": 0,
+            "cleanup_delay_ms": 0
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "a3",
+      "tenant": "alpha",
+      "priority": 9,
+      "max_tool_calls": 10,
+      "max_tokens": 100,
+      "operations": [
+        {
+          "tool": "lookup.record",
+          "token_upper_bound": 0,
+          "arguments": {
+            "record": "release-a",
+            "delay_ms": 0,
+            "cleanup_delay_ms": 0
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "b1",
+      "tenant": "beta",
+      "priority": 0,
+      "max_tool_calls": 10,
+      "max_tokens": 100,
+      "operations": [
+        {
+          "tool": "lookup.record",
+          "token_upper_bound": 0,
+          "arguments": {
+            "record": "release-a",
+            "delay_ms": 0,
+            "cleanup_delay_ms": 0
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "g1",
+      "tenant": "gamma",
+      "priority": 0,
+      "max_tool_calls": 10,
+      "max_tokens": 100,
+      "operations": [
+        {
+          "tool": "lookup.record",
+          "token_upper_bound": 0,
+          "arguments": {
+            "record": "release-a",
+            "delay_ms": 0,
+            "cleanup_delay_ms": 0
+          }
+        }
+      ]
+    }
+  ]
+}

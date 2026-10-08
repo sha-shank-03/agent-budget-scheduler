@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.0",
+  "execution_mode": "offline_mock",
+  "evidence_kind": "fresh_local_mock_execution",
+  "recorded_at_utc": "2026-10-07T16:18:05.624057+00:00",
+  "python_version": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "checks": "literal outcomes, ledgers, capacity, event/terminal counts, scenario decisions, unchanged fixtures",
+  "scenarios": [
+    {
+      "scenario": "basic",
+      "fixture_sha256": "72c5cd8566243d944e5bb1aafc57955aa3c18a3502ddbbd65ad67b5b40ad1d82",
+      "exit_code": 0,
+      "states": {
+        "SUCCEEDED": 2
+      },
+      "rejected": 0,
+      "usage": {
+        "started_tool_calls": 4,
+        "observed_known_tokens": 65,
+        "unknown_usage_calls": 0,
+        "unresolved_reserved_tokens": 0,
+        "reservation_breaches": 0,
+        "observed_token_overrun": 0
+      },
+      "events": 14,
+      "report": "basic/report.json",
+      "decisions": "basic/events.jsonl"
+    },
+    {
+      "scenario": "fairness",
+      "fixture_sha256": "7c782b4eb9862d4a5f3124987e7ce9ade5299d148e134b778a709312d9f19739",
+      "exit_code": 0,
+      "states": {
+        "SUCCEEDED": 5
+      },
+      "rejected": 0,
+      "usage": {
+        "started_tool_calls": 5,
+        "observed_known_tokens": 0,
+        "unknown_usage_calls": 0,
+        "unresolved_reserved_tokens": 0,
+        "reservation_breaches": 0,
+        "observed_token_overrun": 0
+      },
+      "events": 25,
+      "report": "fairness/report.json",
+      "decisions": "fairness/events.jsonl"
+    },
+    {
+      "scenario": "aging",
+      "fixture_sha256": "d5a1e4fc14448c542684bb91053eaa7a348a052381ea9b7bf5c5bbedd868e7f3",
+      "exit_code": 0,
+      "states": {
+        "SUCCEEDED": 3
+      },
+      "rejected": 0,
+      "usage": {
+        "started_tool_calls": 3,
+        "observed_known_tokens": 0,
+        "unknown_usage_calls": 0,
+        "unresolved_reserved_tokens": 0,
+        "reservation_breaches": 0,
+        "observed_token_overrun": 0
+      },
+      "events": 15,
+      "report": "aging/report.json",
+      "decisions": "aging/events.jsonl"
+    },
+    {
+      "scenario": "overload",
+      "fixture_sha256": "7d5963cfc03849e8ab7432af99d8ed42edde7d7c12940d4d82f13ccd499c3838",
+      "exit_code": 0,
+      "states": {
+        "SUCCEEDED": 2
+      },
+      "rejected": 1,
+      "usage": {
+        "started_tool_calls": 2,
+        "observed_known_tokens": 0,
+        "unknown_usage_calls": 0,
+        "unresolved_reserved_tokens": 0,
+        "reservation_breaches": 0,
+        "observed_token_overrun": 0
+      },
+      "events": 11,
+      "report": "overload/report.json",
+      "decisions": "overload/events.jsonl"
+    },
+    {
+      "scenario": "budgets",
+      "fixture_sha256": "46c6eda1cf60feb1e4a0193247a8ac5498eeaded54588477f928159762685ee1",
+      "exit_code": 0,
+      "states": {
+        "BUDGET_EXHAUSTED": 2,
+        "SUCCEEDED": 1
+      },
+      "rejected": 0,
+      "usage": {
+        "started_tool_calls": 3,
+        "observed_known_tokens": 40,
+        "unknown_usage_calls": 0,
+        "unresolved_reserved_tokens": 0,
+        "reservation_breaches": 0,
+        "observed_token_overrun": 0
+      },
+      "events": 19,
+      "report": "budgets/report.json",
+      "decisions": "budgets/events.jsonl"
+    },
+    {
+      "scenario": "lifecycle",
+      "fixture_sha256": "5efac6da11c3f30b5711bde694a566038cc7a52b62f390aa1550f3b595580915",
+      "exit_code": 0,
+      "states": {
+        "CANCELLED": 2,
+        "DEADLINE_EXCEEDED": 2,
+        "SUCCEEDED": 1
+      },
+      "rejected": 0,
+      "usage": {
+        "started_tool_calls": 3,
+        "observed_known_tokens": 0,
+        "unknown_usage_calls": 2,
+        "unresolved_reserved_tokens": 120,
+        "reservation_breaches": 0,
+        "observed_token_overrun": 0
+      },
+      "events": 23,
+      "report": "lifecycle/report.json",
+      "decisions": "lifecycle/events.jsonl"
+    },
+    {
+      "scenario": "faults",
+      "fixture_sha256": "6a3575e01665049c726af594a28479a4b2f939289a5705529b81507af90fd71b",
+      "exit_code": 0,
+      "states": {
+        "FAILED": 3,
+        "SUCCEEDED": 1
+      },
+      "rejected": 0,
+      "usage": {
+        "started_tool_calls": 4,
+        "observed_known_tokens": 25,
+        "unknown_usage_calls": 2,
+        "unresolved_reserved_tokens": 50,
+        "reservation_breaches": 1,
+        "observed_token_overrun": 15
+      },
+      "events": 23,
+      "report": "faults/report.json",
+      "decisions": "faults/events.jsonl"
+    }
+  ]
+}

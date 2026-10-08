@@ -1,0 +1,218 @@
+{
+  "schema_version": "1.0",
+  "execution_mode": "offline_mock",
+  "policy": "tenant_round_robin_aging_priority",
+  "config": {
+    "max_running": 1,
+    "max_running_per_tenant": 1,
+    "max_pending": 32,
+    "aging_interval_ms": 1000
+  },
+  "summary": {
+    "accepted": 4,
+    "rejected": 0,
+    "states": {
+      "FAILED": 3,
+      "SUCCEEDED": 1
+    },
+    "usage": {
+      "started_tool_calls": 4,
+      "observed_known_tokens": 25,
+      "active_reserved_tokens": 0,
+      "unresolved_reserved_tokens": 50,
+      "unknown_usage_calls": 2,
+      "reservation_breaches": 1,
+      "observed_token_overrun": 15,
+      "usage_complete": false,
+      "reported_cost_complete": false,
+      "reported_cost_subtotals": [
+        {
+          "amount": "0.000025",
+          "currency": "USD",
+          "sources": [
+            "synthetic_mock"
+          ]
+        }
+      ],
+      "reported_cost": null
+    },
+    "peak_running": 1,
+    "peak_running_by_tenant": {
+      "a": 1,
+      "b": 1,
+      "c": 1,
+      "d": 1
+    }
+  },
+  "jobs": [
+    {
+      "job_id": "adapter-error",
+      "tenant": "a",
+      "priority": 0,
+      "state": "FAILED",
+      "reason": "adapter_error",
+      "limits": {
+        "max_tool_calls": 10,
+        "max_tokens": 100
+      },
+      "deadline_after_ms": null,
+      "estimates": {
+        "tokens": null,
+        "duration_ms": null,
+        "cost": null
+      },
+      "usage": {
+        "started_tool_calls": 1,
+        "observed_input_tokens": 0,
+        "observed_output_tokens": 0,
+        "observed_known_tokens": 0,
+        "active_reserved_tokens": 0,
+        "unresolved_reserved_tokens": 20,
+        "unknown_usage_calls": 1,
+        "usage_complete": false,
+        "remaining_conservative_tokens": 80,
+        "reservation_breaches": 0,
+        "observed_token_overrun": 0,
+        "reported_cost": null,
+        "reported_cost_subtotals": [],
+        "reported_cost_complete": false
+      },
+      "queue_wait_ms": 0.0,
+      "runtime_ms": 0.0
+    },
+    {
+      "job_id": "missing-usage",
+      "tenant": "b",
+      "priority": 0,
+      "state": "FAILED",
+      "reason": "usage_unknown",
+      "limits": {
+        "max_tool_calls": 10,
+        "max_tokens": 100
+      },
+      "deadline_after_ms": null,
+      "estimates": {
+        "tokens": null,
+        "duration_ms": null,
+        "cost": null
+      },
+      "usage": {
+        "started_tool_calls": 1,
+        "observed_input_tokens": 0,
+        "observed_output_tokens": 0,
+        "observed_known_tokens": 0,
+        "active_reserved_tokens": 0,
+        "unresolved_reserved_tokens": 30,
+        "unknown_usage_calls": 1,
+        "usage_complete": false,
+        "remaining_conservative_tokens": 70,
+        "reservation_breaches": 0,
+        "observed_token_overrun": 0,
+        "reported_cost": null,
+        "reported_cost_subtotals": [],
+        "reported_cost_complete": false
+      },
+      "queue_wait_ms": 0.0,
+      "runtime_ms": 0.0
+    },
+    {
+      "job_id": "overrun",
+      "tenant": "c",
+      "priority": 0,
+      "state": "FAILED",
+      "reason": "usage_exceeds_reservation",
+      "limits": {
+        "max_tool_calls": 10,
+        "max_tokens": 10
+      },
+      "deadline_after_ms": null,
+      "estimates": {
+        "tokens": null,
+        "duration_ms": null,
+        "cost": null
+      },
+      "usage": {
+        "started_tool_calls": 1,
+        "observed_input_tokens": 20,
+        "observed_output_tokens": 5,
+        "observed_known_tokens": 25,
+        "active_reserved_tokens": 0,
+        "unresolved_reserved_tokens": 0,
+        "unknown_usage_calls": 0,
+        "usage_complete": true,
+        "remaining_conservative_tokens": -15,
+        "reservation_breaches": 1,
+        "observed_token_overrun": 15,
+        "reported_cost": {
+          "amount": "0.000025",
+          "currency": "USD",
+          "sources": [
+            "synthetic_mock"
+          ]
+        },
+        "reported_cost_subtotals": [
+          {
+            "amount": "0.000025",
+            "currency": "USD",
+            "sources": [
+              "synthetic_mock"
+            ]
+          }
+        ],
+        "reported_cost_complete": true
+      },
+      "queue_wait_ms": 0.0,
+      "runtime_ms": 0.0
+    },
+    {
+      "job_id": "healthy",
+      "tenant": "d",
+      "priority": 0,
+      "state": "SUCCEEDED",
+      "reason": null,
+      "limits": {
+        "max_tool_calls": 10,
+        "max_tokens": 100
+      },
+      "deadline_after_ms": null,
+      "estimates": {
+        "tokens": null,
+        "duration_ms": null,
+        "cost": null
+      },
+      "usage": {
+        "started_tool_calls": 1,
+        "observed_input_tokens": 0,
+        "observed_output_tokens": 0,
+        "observed_known_tokens": 0,
+        "active_reserved_tokens": 0,
+        "unresolved_reserved_tokens": 0,
+        "unknown_usage_calls": 0,
+        "usage_complete": true,
+        "remaining_conservative_tokens": 100,
+        "reservation_breaches": 0,
+        "observed_token_overrun": 0,
+        "reported_cost": {
+          "amount": "0",
+          "currency": "USD",
+          "sources": [
+            "synthetic_mock"
+          ]
+        },
+        "reported_cost_subtotals": [
+          {
+            "amount": "0",
+            "currency": "USD",
+            "sources": [
+              "synthetic_mock"
+            ]
+          }
+        ],
+        "reported_cost_complete": true
+      },
+      "queue_wait_ms": 0.0,
+      "runtime_ms": 0.0
+    }
+  ],
+  "rejections": []
+}

@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "execution_mode": "offline_mock",
+  "config": {
+    "max_running": 1,
+    "max_running_per_tenant": 1,
+    "max_pending": 32,
+    "aging_interval_ms": 1000
+  },
+  "jobs": [
+    {
+      "job_id": "calls-exhausted",
+      "tenant": "a",
+      "priority": 0,
+      "max_tool_calls": 1,
+      "max_tokens": 100,
+      "operations": [
+        {
+          "tool": "lookup.record",
+          "token_upper_bound": 0,
+          "arguments": {
+            "record": "release-a",
+            "delay_ms": 0,
+            "cleanup_delay_ms": 0
+          }
+        },
+        {
+          "tool": "lookup.record",
+          "token_upper_bound": 0,
+          "arguments": {
+            "record": "release-a",
+            "delay_ms": 0,
+            "cleanup_delay_ms": 0
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "tokens-exhausted",
+      "tenant": "b",
+      "priority": 0,
+      "max_tool_calls": 10,
+      "max_tokens": 50,
+      "operations": [
+        {
+          "tool": "model.generate",
+          "token_upper_bound": 40,
+          "arguments": {
+            "input_tokens": 40,
+            "output_tokens": 0,
+            "delay_ms": 0,
+            "cleanup_delay_ms": 0
+          }
+        },
+        {
+          "tool": "model.generate",
+          "token_upper_bound": 11,
+          "arguments": {
+            "input_tokens": 11,
+            "output_tokens": 0,
+            "delay_ms": 0,
+            "cleanup_delay_ms": 0
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "healthy",
+      "tenant": "c",
+      "priority": 0,
+      "max_tool_calls": 10,
+      "max_tokens": 100,
+      "operations": [
+        {
+          "tool": "lookup.record",
+          "token_upper_bound": 0,
+          "arguments": {
+            "record": "release-a",
+            "delay_ms": 0,
+            "cleanup_delay_ms": 0
+          }
+        }
+      ]
+    }
+  ]
+}

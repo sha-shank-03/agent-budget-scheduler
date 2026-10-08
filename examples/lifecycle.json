@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0",
+  "execution_mode": "offline_mock",
+  "config": {
+    "max_running": 2,
+    "max_running_per_tenant": 1,
+    "max_pending": 32,
+    "aging_interval_ms": 1000
+  },
+  "jobs": [
+    {
+      "job_id": "running-deadline",
+      "tenant": "deadline",
+      "priority": 9,
+      "max_tool_calls": 10,
+      "max_tokens": 100,
+      "operations": [
+        {
+          "tool": "model.generate",
+          "token_upper_bound": 60,
+          "arguments": {
+            "input_tokens": 40,
+            "output_tokens": 0,
+            "delay_ms": 200,
+            "cleanup_delay_ms": 50
+          }
+        },
+        {
+          "tool": "lookup.record",
+          "token_upper_bound": 0,
+          "arguments": {
+            "record": "release-a",
+            "delay_ms": 0,
+            "cleanup_delay_ms": 0
+          }
+        }
+      ],
+      "deadline_after_ms": 30
+    },
+    {
+      "job_id": "queued-deadline",
+      "tenant": "deadline",
+      "priority": 0,
+      "max_tool_calls": 10,
+      "max_tokens": 100,
+      "operations": [
+        {
+          "tool": "lookup.record",
+          "token_upper_bound": 0,
+          "arguments": {
+            "record": "release-a",
+            "delay_ms": 0,
+            "cleanup_delay_ms": 0
+          }
+        }
+      ],
+      "deadline_after_ms": 10
+    },
+    {
+      "job_id": "running-cancel",
+      "tenant": "cancel",
+      "priority": 9,
+      "max_tool_calls": 10,
+      "max_tokens": 100,
+      "operations": [
+        {
+          "tool": "model.generate",
+          "token_upper_bound": 60,
+          "arguments": {
+            "input_tokens": 40,
+            "output_tokens": 0,
+            "delay_ms": 200,
+            "cleanup_delay_ms": 50
+          }
+        },
+        {
+          "tool": "lookup.record",
+          "token_upper_bound": 0,
+          "arguments": {
+            "record": "release-a",
+            "delay_ms": 0,
+            "cleanup_delay_ms": 0
+          }
+        }
+      ],
+      "cancel_after_ms": 20
+    },
+    {
+      "job_id": "queued-cancel",
+      "tenant": "cancel",
+      "priority": 0,
+      "max_tool_calls": 10,
+      "max_tokens": 100,
+      "operations": [
+        {
+          "tool": "lookup.record",
+          "token_upper_bound": 0,
+          "arguments": {
+            "record": "release-a",
+            "delay_ms": 0,
+            "cleanup_delay_ms": 0
+          }
+        }
+      ],
+      "cancel_after_ms": 0
+    },
+    {
+      "job_id": "healthy",
+      "tenant": "healthy",
+      "priority": 0,
+      "max_tool_calls": 10,
+      "max_tokens": 100,
+      "operations": [
+        {
+          "tool": "lookup.record",
+          "token_upper_bound": 0,
+          "arguments": {
+            "record": "release-a",
+            "delay_ms": 0,
+            "cleanup_delay_ms": 0
+          }
+        }
+      ]
+    }
+  ]
+}

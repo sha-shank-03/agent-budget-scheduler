@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "execution_mode": "offline_mock",
+  "config": {
+    "max_running": 1,
+    "max_running_per_tenant": 1,
+    "max_pending": 2,
+    "aging_interval_ms": 1000
+  },
+  "jobs": [
+    {
+      "job_id": "admitted-a",
+      "tenant": "a",
+      "priority": 0,
+      "max_tool_calls": 10,
+      "max_tokens": 100,
+      "operations": [
+        {
+          "tool": "lookup.record",
+          "token_upper_bound": 0,
+          "arguments": {
+            "record": "release-a",
+            "delay_ms": 0,
+            "cleanup_delay_ms": 0
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "admitted-b",
+      "tenant": "b",
+      "priority": 0,
+      "max_tool_calls": 10,
+      "max_tokens": 100,
+      "operations": [
+        {
+          "tool": "lookup.record",
+          "token_upper_bound": 0,
+          "arguments": {
+            "record": "release-a",
+            "delay_ms": 0,
+            "cleanup_delay_ms": 0
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "rejected",
+      "tenant": "c",
+      "priority": 9,
+      "max_tool_calls": 10,
+      "max_tokens": 100,
+      "operations": [
+        {
+          "tool": "lookup.record",
+          "token_upper_bound": 0,
+          "arguments": {
+            "record": "release-a",
+            "delay_ms": 0,
+            "cleanup_delay_ms": 0
+          }
+        }
+      ]
+    }
+  ]
+}

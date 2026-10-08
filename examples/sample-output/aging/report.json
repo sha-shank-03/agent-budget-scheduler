@@ -1,0 +1,199 @@
+{
+  "schema_version": "1.0",
+  "execution_mode": "offline_mock",
+  "policy": "tenant_round_robin_aging_priority",
+  "config": {
+    "max_running": 1,
+    "max_running_per_tenant": 1,
+    "max_pending": 32,
+    "aging_interval_ms": 10
+  },
+  "summary": {
+    "accepted": 3,
+    "rejected": 0,
+    "states": {
+      "SUCCEEDED": 3
+    },
+    "usage": {
+      "started_tool_calls": 3,
+      "observed_known_tokens": 0,
+      "active_reserved_tokens": 0,
+      "unresolved_reserved_tokens": 0,
+      "unknown_usage_calls": 0,
+      "reservation_breaches": 0,
+      "observed_token_overrun": 0,
+      "usage_complete": true,
+      "reported_cost_complete": true,
+      "reported_cost_subtotals": [
+        {
+          "amount": "0",
+          "currency": "USD",
+          "sources": [
+            "synthetic_mock"
+          ]
+        }
+      ],
+      "reported_cost": {
+        "amount": "0",
+        "currency": "USD",
+        "sources": [
+          "synthetic_mock"
+        ]
+      }
+    },
+    "peak_running": 1,
+    "peak_running_by_tenant": {
+      "same": 1
+    }
+  },
+  "jobs": [
+    {
+      "job_id": "blocker",
+      "tenant": "same",
+      "priority": 9,
+      "state": "SUCCEEDED",
+      "reason": null,
+      "limits": {
+        "max_tool_calls": 10,
+        "max_tokens": 100
+      },
+      "deadline_after_ms": null,
+      "estimates": {
+        "tokens": null,
+        "duration_ms": null,
+        "cost": null
+      },
+      "usage": {
+        "started_tool_calls": 1,
+        "observed_input_tokens": 0,
+        "observed_output_tokens": 0,
+        "observed_known_tokens": 0,
+        "active_reserved_tokens": 0,
+        "unresolved_reserved_tokens": 0,
+        "unknown_usage_calls": 0,
+        "usage_complete": true,
+        "remaining_conservative_tokens": 100,
+        "reservation_breaches": 0,
+        "observed_token_overrun": 0,
+        "reported_cost": {
+          "amount": "0",
+          "currency": "USD",
+          "sources": [
+            "synthetic_mock"
+          ]
+        },
+        "reported_cost_subtotals": [
+          {
+            "amount": "0",
+            "currency": "USD",
+            "sources": [
+              "synthetic_mock"
+            ]
+          }
+        ],
+        "reported_cost_complete": true
+      },
+      "queue_wait_ms": 0.0,
+      "runtime_ms": 125.0
+    },
+    {
+      "job_id": "old-low",
+      "tenant": "same",
+      "priority": 0,
+      "state": "SUCCEEDED",
+      "reason": null,
+      "limits": {
+        "max_tool_calls": 10,
+        "max_tokens": 100
+      },
+      "deadline_after_ms": null,
+      "estimates": {
+        "tokens": null,
+        "duration_ms": null,
+        "cost": null
+      },
+      "usage": {
+        "started_tool_calls": 1,
+        "observed_input_tokens": 0,
+        "observed_output_tokens": 0,
+        "observed_known_tokens": 0,
+        "active_reserved_tokens": 0,
+        "unresolved_reserved_tokens": 0,
+        "unknown_usage_calls": 0,
+        "usage_complete": true,
+        "remaining_conservative_tokens": 100,
+        "reservation_breaches": 0,
+        "observed_token_overrun": 0,
+        "reported_cost": {
+          "amount": "0",
+          "currency": "USD",
+          "sources": [
+            "synthetic_mock"
+          ]
+        },
+        "reported_cost_subtotals": [
+          {
+            "amount": "0",
+            "currency": "USD",
+            "sources": [
+              "synthetic_mock"
+            ]
+          }
+        ],
+        "reported_cost_complete": true
+      },
+      "queue_wait_ms": 125.0,
+      "runtime_ms": 0.0
+    },
+    {
+      "job_id": "later-high",
+      "tenant": "same",
+      "priority": 9,
+      "state": "SUCCEEDED",
+      "reason": null,
+      "limits": {
+        "max_tool_calls": 10,
+        "max_tokens": 100
+      },
+      "deadline_after_ms": null,
+      "estimates": {
+        "tokens": null,
+        "duration_ms": null,
+        "cost": null
+      },
+      "usage": {
+        "started_tool_calls": 1,
+        "observed_input_tokens": 0,
+        "observed_output_tokens": 0,
+        "observed_known_tokens": 0,
+        "active_reserved_tokens": 0,
+        "unresolved_reserved_tokens": 0,
+        "unknown_usage_calls": 0,
+        "usage_complete": true,
+        "remaining_conservative_tokens": 100,
+        "reservation_breaches": 0,
+        "observed_token_overrun": 0,
+        "reported_cost": {
+          "amount": "0",
+          "currency": "USD",
+          "sources": [
+            "synthetic_mock"
+          ]
+        },
+        "reported_cost_subtotals": [
+          {
+            "amount": "0",
+            "currency": "USD",
+            "sources": [
+              "synthetic_mock"
+            ]
+          }
+        ],
+        "reported_cost_complete": true
+      },
+      "queue_wait_ms": 125.0,
+      "runtime_ms": 0.0
+    }
+  ],
+  "rejections": []
+}

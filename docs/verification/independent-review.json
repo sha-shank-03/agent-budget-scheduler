@@ -1,0 +1,26 @@
+{
+  "review_id": "FINAL",
+  "reviewed_at_utc": "2026-10-08T01:49:58.699749+00:00",
+  "summary": "Whole repository independently accepted for the agreed local MVP.",
+  "assertions": "33 meaningful tests pass. Fresh documented basic/fault/embedding commands pass with literal two successes/four calls/65 known tokens, distinct submitted estimates, exactly one terminal decision, three fault failures/25 known/50 unresolved/15 overrun and unknown cost retained. Prior main M2 independently verified all seven scenarios and controlled cleanup/deadline/fairness boundaries. Final seeded core test uses independent bookkeeping and fixed bounded seeds.",
+  "inspection": "Main inspected scheduler/policy/ledger and final seeded tests, architecture/contracts/limitations/research, MIT/runtime/action attribution, evidence, saved mock reports and prepared CI. CI pins verified against the repository research record; read-only permissions, immutable actions, Python3.11.9, Windows/Linux and no paid calls/secrets/deployment. Documented clone-root run and embedding directly executed on HP.",
+  "limitations": "Accepted agreed local MVP on Windows/CPython3.11.9 with deterministic mocks. Hosted CI/Linux/POSIX/live-model/provider/production/security/performance execution remains unexecuted or outside scope. CI is prepared/reviewed, not reported as hosted success. Trusted cooperative callbacks can hold slots/suppress cancellation; no hard money/provider consumption cap, sandbox, durability or external rollback. Existing files may be untracked; source manifest preserves exact delivered bytes.",
+  "source_file_count": 52,
+  "status": "passed",
+  "repository": "agent-budget-scheduler",
+  "scope": "Coordinating-agent review, separate from implementation worker; not third-party certification.",
+  "local_path_redaction": "Personal host prefixes replaced. Original receipt hashes below describe the unredacted local source; exports have separate hashes.",
+  "publication_change_scope": "README/AGENTS/contributor/context/evidence exports and ignore/attribute portability only. Runtime, tests, fixtures and dependency pins remain as accepted.",
+  "command_receipt_exports": [
+    {
+      "path": "docs/verification/main-command-00-final-main-tests.json",
+      "source_receipt_sha256": "6c208c2cd8ffa827c6abd0b97a19d8140c39f5bd7c4b83c551a6ee97ddba0f84",
+      "export_sha256": "0be27b67a519f201bf050d8adb925cff65eb117c07c3ad2586ff2a00ec9dc8fd"
+    },
+    {
+      "path": "docs/verification/main-command-01-final-main-cli.json",
+      "source_receipt_sha256": "dcb0ca1948f52cc568865bf03a66aca689767e83f8b2594f4e32f11f5fdca3a0",
+      "export_sha256": "c3ea502a218c7a47ecd58699aadca7ccc3cd3f920fc473bc999194f319c8d5f4"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "execution_mode": "offline_mock",
+  "config": {
+    "max_running": 1,
+    "max_running_per_tenant": 1,
+    "max_pending": 32,
+    "aging_interval_ms": 1000
+  },
+  "jobs": [
+    {
+      "job_id": "adapter-error",
+      "tenant": "a",
+      "priority": 0,
+      "max_tool_calls": 10,
+      "max_tokens": 100,
+      "operations": [
+        {
+          "tool": "fault.raise",
+          "token_upper_bound": 20,
+          "arguments": {}
+        }
+      ]
+    },
+    {
+      "job_id": "missing-usage",
+      "tenant": "b",
+      "priority": 0,
+      "max_tool_calls": 10,
+      "max_tokens": 100,
+      "operations": [
+        {
+          "tool": "fault.missing_usage",
+          "token_upper_bound": 30,
+          "arguments": {}
+        }
+      ]
+    },
+    {
+      "job_id": "overrun",
+      "tenant": "c",
+      "priority": 0,
+      "max_tool_calls": 10,
+      "max_tokens": 10,
+      "operations": [
+        {
+          "tool": "fault.overrun",
+          "token_upper_bound": 10,
+          "arguments": {
+            "input_tokens": 20,
+            "output_tokens": 5
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "healthy",
+      "tenant": "d",
+      "priority": 0,
+      "max_tool_calls": 10,
+      "max_tokens": 100,
+      "operations": [
+        {
+          "tool": "lookup.record",
+          "token_upper_bound": 0,
+          "arguments": {
+            "record": "release-a",
+            "delay_ms": 0,
+            "cleanup_delay_ms": 0
+          }
+        }
+      ]
+    }
+  ]
+}
